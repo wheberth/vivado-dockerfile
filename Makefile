@@ -32,8 +32,7 @@ clean:
 
 image: Dockerfile $(WEB_INSTALLER)/wi_authentication_key $(WEB_INSTALLER)/install_config.txt
 	echo "Creating docker image..."
-	#$(DOCKER_CMD) build  --no-cache --squash -f Dockerfile \	
-	$(DOCKER_CMD) build -f Dockerfile \
+	$(DOCKER_CMD) build  --no-cache --squash -f Dockerfile \	
 	--build-arg WEB_INSTALLER=$(WEB_INSTALLER)   \
 	--build-arg UBUNTU_VERSION=$(UBUNTU_VERSION) \
 	--build-arg VIVADO_VERSION=${VIVADO_VERSION} \
