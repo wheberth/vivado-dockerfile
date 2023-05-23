@@ -1,6 +1,6 @@
 export DOCKER_CMD = podman
-export VIVADO_VERSION = 2022.2
-export WEB_INSTALLER = Xilinx_Unified_2022.2_1014_8888_Lin64
+export VIVADO_VERSION = 2023.1
+export WEB_INSTALLER = Xilinx_Unified_2023.1_0507_1903_Lin64
 export UBUNTU_VERSION = 20.04
 export USERNAME=${USER}
 
@@ -32,7 +32,7 @@ clean:
 
 image: Dockerfile $(WEB_INSTALLER)/wi_authentication_key $(WEB_INSTALLER)/install_config.txt
 	echo "Creating docker image..."
-	$(DOCKER_CMD) build  --no-cache --squash -f Dockerfile \	
+	$(DOCKER_CMD) build  --no-cache --squash -f Dockerfile \
 	--build-arg WEB_INSTALLER=$(WEB_INSTALLER)   \
 	--build-arg UBUNTU_VERSION=$(UBUNTU_VERSION) \
 	--build-arg VIVADO_VERSION=${VIVADO_VERSION} \
